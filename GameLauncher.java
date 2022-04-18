@@ -3,9 +3,9 @@ import java.util.Arrays;
 public class GameLauncher {
 
     // Controls what type of player for Players 1 and 2
-    private static Player Player1Type = new LearningDemoPlayer();
+    private static Player Player1Type = new LearningAIPlayer();
     private static Player Player2Type = new HumanPlayer();
-    // private static Player Player1Type = new HumanPlayer();5
+    // private static Player Player1Type = new HumanPlayer();
     // private static Player Player2Type = new BasicAIPlayer();
 
     // accepted inputs when asking users to play again

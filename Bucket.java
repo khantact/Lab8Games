@@ -6,23 +6,20 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.lang.RuntimeException;
-import java.math.*;
 
 public class Bucket {
 
     // The number associated with the bucket
     // (i.e. this is bucket #7)
     private int bucketNum;
-    private Random rand;
+    private Random rand = new Random();
     // stores all the marbles in the bucket;
     private ArrayList<Integer> marbles; // Uncomment for part 3.3.1!!
 
     public Bucket(int bucketNum) {
         this.bucketNum = bucketNum;
-        for (int i = 1; i <= Math.min(3, bucketNum); i++) {
-            addMarble(i);
-        }
         // initialize the starting marbles in the bucket here!
+        this.marbles = new ArrayList<Integer>();
     }
 
     // Adds a marble of the argument number
@@ -35,10 +32,11 @@ public class Bucket {
     // number associated with the removed marble.
     // Throws an IllegalArgumentException if the bucket is empty
     public int takeRandomMarble() {
-        if (marbles.size() == 0) {
-            throw new IllegalArgumentException("Bucket is Empty");
-        }
-        return marbles.get(rand.nextInt(marbles.size()));
+        int remove = marbles.remove(rand.nextInt(marbles.size()));
+        // if (marbles.size() == 0) {
+        // throw new IllegalArgumentException("Bucket is Empty");
+        // }
+        return remove;
     }
 
     // returns the number of marbles in the bucket
